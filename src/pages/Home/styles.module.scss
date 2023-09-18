@@ -1,0 +1,23 @@
+.container {
+  background-color: #eee;
+  width: 100vw;
+  min-height: calc(100vh - 10rem);
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box {
+  width: 80%;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 1150px) {
+  .box {
+    width: 95%;
+  }
+}

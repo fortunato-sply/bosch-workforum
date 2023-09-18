@@ -11,6 +11,10 @@
   padding-right: 1rem;
   align-items: center;
   display: flex;
+  justify-content: center;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
   transition: .3s;
 
   &:hover {

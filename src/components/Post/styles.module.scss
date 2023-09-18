@@ -1,0 +1,130 @@
+.card {
+  width: 60%;
+  background-color: #fff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  min-height: 20rem;
+  padding: 8px 16px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.upside {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  img {
+    width: 4em;
+    border-radius: 99px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  span {
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+}
+
+.afterline {
+  width: 2px;
+  height: 25px;
+  background-color: #999;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1rem 0 1rem;
+  min-height: 14rem;
+
+  .afterline {
+    width: 80%;
+    height: 1px;
+    background-color: #ccc;
+    justify-self: center;
+  }
+}
+
+.text {
+  width: 100%;
+  text-align: left;
+  min-height: 10rem;
+  font-size: 1rem;
+  text-indent: 2px;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  justify-content: space-between;
+  gap: 0.5rem;
+  height: 32px;
+  font-size: 1rem;
+  text-align: center;
+
+  span {
+    text-align: center;
+    margin-top: 6px;
+    transition: .8s;
+  }
+}
+
+.liked {
+  color: #1CD303;
+
+  .likebtn {
+    color: #1CD303;
+  }
+}
+
+.likebtn {
+  margin-top: 0.5rem;
+  border: 0;
+  background-color: transparent;
+  font-size: 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  
+  &:hover {
+    animation: rotate .8s;
+    transform: scale(1.1);
+    transition: .8s;
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: scale(1.1) rotate(20deg);
+  }
+
+  50% {
+    transform: scale(0.9) rotate(-30deg);
+  }
+
+  100% {
+    transform: scale(1.1) rotate(0deg);
+  }
+}
+
+@media (max-width: 1150px) {
+  .card {
+    width: 100%;
+  }
+}

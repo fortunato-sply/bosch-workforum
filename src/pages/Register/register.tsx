@@ -56,7 +56,7 @@ export default function RegisterPage() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button className={styles.submit}>Continue</button>
+        <button className={styles.submit} onClick={onHandleClickRegister}>Continue</button>
         <span>already have an account? <NavLink to='/'>Login</NavLink></span>
       </div>
     </section>

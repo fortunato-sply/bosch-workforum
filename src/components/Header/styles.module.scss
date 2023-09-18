@@ -101,6 +101,9 @@
   align-items: center;
   display: flex;
   transition: .3s;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
 
   &:hover {
       color: red;

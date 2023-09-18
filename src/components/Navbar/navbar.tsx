@@ -5,6 +5,26 @@ import { SignOut } from 'phosphor-react';
 
 export default function Navbar() {
   const [isActive, setIsActive] = useState(false);
+  const hasLoggedIn = sessionStorage.getItem('token');
+
+  const logout = () => {
+    sessionStorage.removeItem('token');
+    window.location.reload();
+  }
+
+  const renderLogout = () => {
+    if (hasLoggedIn)
+      return <button className={styles.log} onClick={logout}><SignOut size={25} /></button>
+  }
+
+  const renderLinks = () => {
+    if (hasLoggedIn)
+      return (
+        <div className={styles.links}>
+          <NavLink to='/add'>Add new forum</NavLink>
+        </div>
+      )
+  }
 
   return (
     <div className={styles.phone_sidebar}>
@@ -14,11 +34,9 @@ export default function Navbar() {
         <span className={styles.bar}></span>
       </div>
       <div className={`${styles.content} ${isActive ? `${styles.active}` : ''}`}>
-        <div className={styles.links}>
-          <NavLink to='/add'>Add new forum</NavLink>
-        </div>
+        {renderLinks()}
       </div>
-      <NavLink to='/logout' className={styles.log}><SignOut size={25}/></NavLink>
+      {renderLogout()}
     </div>
   )
 }

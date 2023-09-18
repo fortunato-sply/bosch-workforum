@@ -4,6 +4,27 @@ import styles from './styles.module.scss';
 import { SignOut } from 'phosphor-react';
 
 export default function Header() {
+  const hasLoggedIn = sessionStorage.getItem('token');
+
+  const logout = () => {
+    sessionStorage.removeItem('token');
+    window.location.reload();
+  }
+
+  const renderLogout = () => {
+    if (hasLoggedIn)
+      return <button className={styles.log} onClick={logout}><SignOut size={25} /></button>
+  }
+
+  const renderLinks = () => {
+    if (hasLoggedIn)
+      return (
+        <div className={styles.links}>
+          <NavLink to='/add'>Add new forum</NavLink>
+        </div>
+      )
+  }
+
   return (
     <section className={styles.container}>
       <div className={styles.headerbox}>
@@ -14,10 +35,8 @@ export default function Header() {
         <div className={styles.downside}>
           <Navbar />
           <div className={styles.content}>
-            <div className={styles.links}>
-              <NavLink to='/add'>Add new forum</NavLink>
-            </div>
-            <NavLink to='/logout' className={styles.log}><SignOut size={25}/></NavLink>
+            {renderLinks()}
+            {renderLogout()}
           </div>
         </div>
       </div>
