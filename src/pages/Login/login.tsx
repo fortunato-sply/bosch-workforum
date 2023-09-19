@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import styles from './styles.module.scss';
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SECRET } from '../../SECRET';
 import CryptoJS from 'crypto-js';
 
@@ -11,6 +11,13 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
 
   const [error, setError] = useState(false);
+
+  const token = sessionStorage.getItem('token');
+
+  useEffect(() => {
+    if(token)
+      navigate('/main');
+  }, [])
 
   const navigate = useNavigate();
   const onHandleLogin = async() => {

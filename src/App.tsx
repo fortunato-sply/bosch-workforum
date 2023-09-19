@@ -7,6 +7,7 @@ import HomePage from './pages/Home/home';
 import LoginPage from './pages/Login/login';
 import ProtectedRoute from './components/ProtectedRoute';
 import RegisterPage from './pages/Register/register';
+import AddPage from './pages/Add/add';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         }>
           <Route path='' element={<HomePage />} />
         </Route>
+        <Route path='/add' element={<AddPage />} />
       </Routes>
     </div>
   );

@@ -21,7 +21,7 @@ export default function Navbar() {
     if (hasLoggedIn)
       return (
         <div className={styles.links}>
-          <NavLink to='/add'>Add new forum</NavLink>
+          <NavLink to='/add'>Add new post</NavLink>
         </div>
       )
   }
